@@ -1,198 +1,26 @@
 <!DOCTYPE html> 
 <html>
-	<head>
-		<title>Mobile store locator</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-		
-		<!-- jquery & jqm -->
-		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
-		<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-		
-		<script>
-		//JQM configuration
-		$(document).bind("mobileinit", function(){
-		  $.mobile.defaultPageTransition = 'none';
-		});
-		</script>
-		<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
-		
-		<!-- press-css: ../css/store-locator/mobile-storelocator.css -->
-		<link href="css/style.css" type="text/css" charset="utf-8"></link>
-		
-		<!-- backbone -->
-		<!-- press-js: underscore-1.3.3.min.js -->
-		<!-- press-js: backbone-0.9.2.min.js -->
-		
-		<script type="text/javascript" language="javascript"  src="/js/ua-parser-js-0.6.0.min.js"></script>
-		<script type="text/javascript" language="javascript"  src="/js/uuid.js"></script>
-    	
-    	<!-- gmap -->
-		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyB6KIB_WYuMt4Vo4xUzBQn4FtzS6j1IxCA&sensor=true&libraries=geometry">
-	    </script>
-	    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-	    
-	    <script type="text/javascript" language="javascript"  src="/js/infobox_packed.js"></script>
-	    <!-- <script src="@   {'/public/js/mixpanel.js'}"></script>
-   		<script type="text/javascript">mixpanel.init("2df0d04079876861896b7a0b3dae4175");</script> -->
-   		
-		<!-- segment.io -->
-	   <script type="text/javascript">
-		  var analytics=analytics||[];analytics.load=function(e){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"===document.location.protocol?"https://":"http://")+"d2dq2ahtl5zl1z.cloudfront.net/analytics.js/v1/"+e+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);var r=function(e){return function(){analytics.push([e].concat(Array.prototype.slice.call(arguments,0)))}},i=["identify","track","trackLink","trackForm","trackClick","trackSubmit","pageview","ab","alias","ready"];for(var s=0;s<i.length;s++)analytics[i[s]]=r(i[s])};
-		  analytics.load("aszpqlv2zf");
-		</script>
-	
-		<!-- pathful -->
-		<script>
-		var PF_APPID = "45cfacc11fbf06f8";
-		setTimeout(function(){ var d = document; 
-		s = d.createElement('script');
-		s.type = 'text/javascript'; s.async = true;
-		s.src = ("https:" == document.location.protocol) ? 
-		"https://ssl.pathful.com/js/scripts/secure.js"
-		: "http://s.pathful.com/js/scripts/capture.js";
-		document.body.appendChild(s, d);
-		}, 1);
-		</script>
-	    
-	    <!-- phonegap -->
-	    <script type="text/javascript">var phonegap=false;</script>	    
-	    	    	    <!-- press-js: jquery-cookie-1.3.js -->
-	   	<style media="screen" type="text/css">
+<head>
+	<title>Mobile store locator</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+</head>
 
-	   	  	.border{
-	   		width: 100%;
-	   		background-color: #d5e63e;
-	   		height:100px;
-	   		margin: 0 auto;
-	   	}
-
-		@media only screen and (min-device-width: 480px){
-	   	.border{
-	   		height:54px;
-	   	}
-	   }
-
-
-
-</style>
-	    	    
-	</head> 
-	<body>
-
-
-				<div id="main" data-role="page" class="container">
-			<div data-role="content" align="center">
-
-				<div id="top-nav" class="border"></div>
-				<div>
-					<img alt="SkinnyPop Popcorn" src="http://img7.imageshack.us/img7/7687/maingraphicw.png" width="178">
-															<br>
-									
-				</div>
-
-				<div class="main-btns" style="margin-top:10px;">
-					<a id="mapLink" href="#mapScreen"
-						data-role="button" class="go-btn w80 ui-btn-right">
-						<p>Where to Buy</p>
-					</a>
-															<a id="about" href="#about"
-						data-role="button" class="go-btn w80 ui-btn-right"><p>About us</p>
-					</a>
-									</div>
-								<div style="clear: both;"></div>
-				<div style="padding-top:20px;">
-										<a href="http://www.facebook.com/SkinnyPopPopcorn"><img src="/public/css/images/facebook_32.png"></a>
-															<a href="http://twitter.com/theskinnypop"><img src="/public/css/images/twitter_32.png"></a>
-														</div>
-								
-				<div style="clear: both;"></div>
-				<div style="margin-top:20px;">
-				<img src="/public/css/store-locator/fb-locator/powered-by-donde-200.png">
-				</div>
-			</div>
+<body style="background-color:#cae835; margin:0 auto;">
+	<div id="main" style="width:100%;font-family:arial; font-size:16px;">
+		<div id="content" align="center">
+		<div id="top-nav" class="border" style="height:5%;"><p style="color:#666666;letter-spacing:.15em;">NO ARTIFICIAL ANYTHING</p></div>
+		<div id="logo" style="background-color:#fff;padding-top:30px; padding-bottom:30px;">
+			<img alt="SkinnyPop Popcorn" src="http://img7.imageshack.us/img7/7687/maingraphicw.png" width="178px">
 		</div>
-				<div id="about" data-role="page" class="container">
-			<div id="jqm-homeheader" class="ui-bar-f ui-header" role="banner">
-				<div data-role="header" class="header">
-					<h1>About us</h1>
-					<a href="#" data-role="button" data-rel="back" data-icon="arrow-l" class="backButton ui-btn-left" data-direction="reverse">Back</a>
-				</div>
-				<!-- /header -->
-			</div>
-	
-			<div data-role="content" class="content" align="center">
-				<div><h2>SkinnyPop Popcorn</h2><br>  
-				</div>
-				<div style="margin-top:20px;">All natural &#9679; Cholesterol free &#9679; Zero trans fat &#9679; Preservative free &#9679; Dairy free &#9679; Peanut free &#9679; Tree nut free &#9679; Gluten free &#9679; Non GMO &#9679; A good source of fiber &#9679; AND DELICIOUS!
-</div>
-			</div>
-			<!-- /content -->	
-		</div><!-- /about page -->
-						<div id="mapScreen" data-role="page" class="container">
-			<div id="mapContainer" data-role="content" class="content" align="center">
-					<div class="buttonBar" id="buttonBar" style="width: 100%; height: 8%;" >
-			            <a id="centerMapToUser" href="#" style="margin-right:10px"><img src="/public/css/store-locator/mobile-assets/findMe.png" width="45px" alt="Nearby"></a>
-			            <span><img src="/public/css/store-locator/mobile-assets/separator.png" height="45px"></span>
-            			<a id="toggleSearch" class="toggleSearch" href="#" style="margin-right:10px">
-            				<img id="searchIcon" src="/public/css/store-locator/mobile-assets/search.png" width="45px" alt="Search">
-            				<img id="searchIconSelected" src="/public/css/store-locator/mobile-assets/search-selected.png" style="display:none;" width="45px" alt="Search">
-            			</a>
-            			            			<span><img src="/public/css/store-locator/mobile-assets/separator.png" height="45px"></span>
-            			<a id="toggleFilters" href="#" style="margin-right:10px">
-            				<img id="filterIcon" src="/public/css/store-locator/mobile-assets/filter.png" width="45px" alt="Filter">
-            				<img id="filterIconSelected" src="/public/css/store-locator/mobile-assets/filter-selected.png" style="display:none;" width="45px" alt="Filter">
-            			</a>
-            			            			<span><img src="/public/css/store-locator/mobile-assets/separator.png" height="45px"></span>
-            			<a id="toggleMap" href="#" style="display:none;"><img src="/public/css/store-locator/mobile-assets/mapView.png" width="45px" alt="Map"></a>
-            			<a id="toggleList" href="#"><img src="/public/css/store-locator/mobile-assets/listView.png" width="45px" alt="List"></a>
-					</div>
-					<div id="map_and_link" style="width: 90%; height: 90%;width: 100%; height: 90%;">
-						<div id="map_canvas" class="map_canvas_mobile" ></div>
-						<div id="brandtree_link"><a href="http://donde.io" style="font-family: Futura, Verdana;font-size:10px;color:#191919;">Powered by Donde</a></div>
-					</div>
-					<div id="search" style="width: 100%; height: 90%; display:none;">
-						    <input id="geoSearch" type="search" name="geoSearch" value="" placeholder="Enter a location!" />
-							<a id="searchButton" class="searchButton"  href="#" data-role="button">Search</a>						
-					</div>
-										<div id="filters" style="width: 100%; height: 90%; display:none;">
-												<div data-role="fieldcontain">
-							<select name="select-product" id="select-product">
-								<option value="no-filter">Select a product</option>
-															  	<option value="SkinnyPop Popcorn Black Pepper">SkinnyPop Popcorn Black Pepper</option>
-							 								  	<option value="SkinnyPop Popcorn">SkinnyPop Popcorn</option>
-							 								</select>
-						</div>
-																		<div><a id="applyFilterButton" href="#" data-role="button">Apply</a></div>
-					</div>
-										<div id="list" style="width: 100%; height: 90%;display:none;" class="resellerListView">
-						
-					</div>
-			</div><!-- /content -->
-		</div><!-- /map page -->
-		<div id="sourceDetails" data-role="page" class="sourceDetails container">
-			<div id="jqm-homeheader" class="ui-bar-f ui-header" role="banner">
-				<div data-role="header" class="header">
-					<h1>Contact</h1>
-					<a href="#" data-role="button" data-rel="back" data-icon="arrow-l" class="backButton ui-btn-left " data-direction="reverse">Back</a>
-				</div>
-				<!-- /header -->
-			</div>
-	
-			<div data-role="content" class="content" align="center">
-				<!-- content is generated automatically by js code -->
-			</div><!-- /content -->	
-		</div><!-- /source detail page -->
-	</body>
-	<script>
-		var limit = 20;
-				
-		var route = "https://www.googleapis.com/fusiontables/v1/query?key=AIzaSyB6KIB_WYuMt4Vo4xUzBQn4FtzS6j1IxCA";
-		var sourceId = 92471;
-		var fusionId = '1avIR-NQ_QiL43UwaD3bpZUozCzFgnCImHR07gmQ';
-	</script>
-	
-	<!-- press-js: storelocator-mobile-v2.js -->
-	<script src="/press/js/riyklBkAbxSMVmTsLmYLxAJJ.js" type="text/javascript" language="javascript" charset="utf-8"></script>
-</html>
+		<div class="main-btns" style="height:36px;color: #ffffff;background: -moz-linear-gradient(top,#072e5e 0%,#072e5e);width:50%;background: -webkit-gradient(linear, left top, left bottom, from(#072e5e),to(#072e5e)); -moz-border-radius: 4px;-webkit-border-radius: 4px;border-radius: 4px;border: 1px solid #072e5e;-moz-box-shadow:0px 1px 3px rgba(000,000,000,0.5),inset 0px 0px 2px rgba(255,255,255,0.7);-webkit-box-shadow:0px 1px 3px rgba(000,000,000,0.5),inset 0px 0px 2px rgba(255,255,255,0.7);box-shadow:0px 1px 3px rgba(000,000,000,0.5),inset 0px 0px 2px rgba(255,255,255,0.7);text-shadow:0px -1px 0px rgba(000,000,000,0.4),0px 1px 0px rgba(255,255,255,0.3);margin:7px;margin-top:20px; height:5%;">
+			<a id="about" href="" style="text-decoration:none; color:#fff;"><p>WHERE TO BUY</p></a>
+		</div>
+		<div class="main-btns" style="height:36px;color: #ffffff;background: -moz-linear-gradient(top,#072e5e 0%,#072e5e);width:50%;background: -webkit-gradient(linear, left top, left bottom, from(#072e5e),to(#072e5e)); -moz-border-radius: 4px;-webkit-border-radius: 4px;border-radius: 4px;border: 1px solid #072e5e;-moz-box-shadow:0px 1px 3px rgba(000,000,000,0.5),inset 0px 0px 2px rgba(255,255,255,0.7);-webkit-box-shadow:0px 1px 3px rgba(000,000,000,0.5),inset 0px 0px 2px rgba(255,255,255,0.7);box-shadow:0px 1px 3px rgba(000,000,000,0.5),inset 0px 0px 2px rgba(255,255,255,0.7);text-shadow:0px -1px 0px rgba(000,000,000,0.4),0px 1px 0px rgba(255,255,255,0.3);margin:7px; height:5%;">
+			<a id="about" href="" style="text-decoration:none; color:#fff;"><p>ABOUT US</p></a>
+		</div>
+		<div id="donde">
+			<img src="/public/css/store-locator/fb-locator/powered-by-donde-200.png">
+		</div>
+		</div>
+	</div>
+</body>
